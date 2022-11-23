@@ -33,33 +33,39 @@ const selectedBrands = [
   'ZTE',
 ];
 
-// let selectedBrandsCheck = new Map();
-
-// for (var i = 0; i < selectedBrands.length; i++) {
-//   selectedBrandsCheck.set(selectedBrands[i], false);
-// }
-
-function fetchData(json) {
-  let phones = [];
-  json = require('./brands.json');
+function fetchData(brands) {
+  let phones = new Map();
   //get all phones with the brands in 'selectedBrands'
-  for (var i = 0; i < json.length; i++) {
-    if (selectedBrands.includes(json[i].name)) {
-      console.log(json[i].url);
-      // selectedBrandsCheck[json[i].name].
+  for (var i = 0; i < brands.length; i++) {
+    const brandName = brands[i].name;
+    if (selectedBrands.includes(brandName)) {
+      // console.log(brands[i].url);
+      fetch('https://gsmarena-api.herokuapp.com/brand/' + brands[i].url)
+      .then((res) => res.json())
+      .then((json) => {
+        json = Object.values(json.data);
+        let phoneList = [];
+        for (var j = 0; j < json.length; j++) {
+          phoneList.push(json[j].name);
+        }
+        phones.set(brandName, phoneList);
+      });
     }
-    // phones.push(json[i].title);
   }
+  //TODO : problem, phones is empty
+  phones.forEach(function(value, key) {
+    text += key + ' = ' + value;
+  })
   return phones;
 }
 
 app.get('/', (req, res) => {
-  res.send(fetchData('t'));
-  // fetch('https://gsmarena-api.herokuapp.com/brands')
-  //   .then((res) => res.json())
-  //   .then((json) => {
-  //     res.send(fetchData(json));
-  //   });
+  // res.send(fetchData('t'));
+  fetch('https://gsmarena-api.herokuapp.com/brands')
+    .then((res) => res.json())
+    .then((json) => {
+      res.send(fetchData(json));
+    });
 });
 
 app.get('/test', (req, res) => {
