@@ -1,5 +1,31 @@
 const cheerio = require('cheerio')
 
+const SELECTED_BRANDS = [
+    'Asus',
+    'Fairphone',
+    'Google',
+    'Honor',
+    'Huawei',
+    'Lenovo',
+    'Micromax',
+    'Microsoft',
+    'Motorola',
+    'Nokia',
+    'Nothing',
+    'Nvidia',
+    'OnePlus',
+    'Oppo',
+    'Plum',
+    'Realme',
+    'Samsung',
+    'Sony',
+    'TCL',
+    'vivo',
+    'Wiko',
+    'Xiaomi',
+    'ZTE',
+  ]
+
 exports.brands = (html) => {
     const $ = cheerio.load(html)
     const json = []
@@ -11,7 +37,9 @@ exports.brands = (html) => {
             devices: $(el).find('span').text().replace(' devices', ''),
             url: aBlock.attr('href').replace('.php', '')
         }
-        json.push(brand)
+        if (SELECTED_BRANDS.includes(brand.name)) {
+            json.push(brand)
+        }
     })
 
     return json
