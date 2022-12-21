@@ -13,10 +13,11 @@
     "gsmarena",
     "api"
   ],
-  "author": "Kirill Potapenko (kirill.potap97@gmail.com)",
+  "author": "Maximilien Herr",
   "license": "MIT",
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "nodemon": "^2.0.15",
