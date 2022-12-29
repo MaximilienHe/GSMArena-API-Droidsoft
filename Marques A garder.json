@@ -30,11 +30,6 @@
         "url": "lenovo-phones-73"
     },
     {
-        "name": "Micromax",
-        "devices": "289",
-        "url": "micromax-phones-66"
-    },
-    {
         "name": "Microsoft",
         "devices": "32",
         "url": "microsoft-phones-64"
