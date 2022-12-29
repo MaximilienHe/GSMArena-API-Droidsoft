@@ -7,7 +7,6 @@ const SELECTED_BRANDS = [
     'Honor',
     'Huawei',
     'Lenovo',
-    'Micromax',
     'Microsoft',
     'Motorola',
     'Nokia',
