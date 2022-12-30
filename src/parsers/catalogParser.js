@@ -10,7 +10,6 @@ const SELECTED_BRANDS = [
     'Microsoft',
     'Motorola',
     'Nokia',
-    'Nothing',
     'OnePlus',
     'Oppo',
     'Realme',
