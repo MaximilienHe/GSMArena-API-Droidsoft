@@ -226,4 +226,4 @@ Created by [@nordmarin](https://t.me/nordmarin) - feel free to contact me!
 
 ## License
 
-GSMArena API is MIT licensed.
+GSMArena API is MIT licensed. 
