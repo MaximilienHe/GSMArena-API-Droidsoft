@@ -216,14 +216,3 @@ Endpoint `/glossary/:term`, example `/glossary/xenon-flash`
 }
 ```
 
-## Proxy
-
-If you want to use proxy add a constant `HTTP_PROXY` in `.env` file or `HTTPS_PROXY` if you use `https`
-
-## Contact
-
-Created by [@nordmarin](https://t.me/nordmarin) - feel free to contact me!
-
-## License
-
-GSMArena API is MIT licensed. 
