@@ -33,9 +33,9 @@ exports.brands = (html) => {
             devices: $(el).find('span').text().replace(' devices', ''),
             url: aBlock.attr('href').replace('.php', '')
         }
-        if (SELECTED_BRANDS.includes(brand.name)) {
+//         if (SELECTED_BRANDS.includes(brand.name)) {
             json.push(brand)
-        }
+//         }
     })
 
     return json
